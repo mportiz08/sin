@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'sin'
+
+if ARGV.size != 1
+  exit 1
+else
+  if ARGV.first == 'console' || ARGV.first == 'c'
+    ARGV.clear
+    Sin.console File.expand_path('.')
+  else
+    exit 1
+  end
+end
